@@ -1,4 +1,3 @@
 # IB Pseudocode Interpreter
 If only I made this for my IA :(
-
 ####Note: It is not very responsive, meaning that if won't open properly on mobile devices!
