@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB Pseudocode is the bane of my existence!</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-badge">IB DP CS</div>
+    <div>
+      <div class="logo-title">Pseudocode Interpreter (0.1.8 Alpha)</div>
+      <div class="logo-sub">Pseudocode, Algorithms & Guide all belong to the IBO.</div>
+    </div>
+  </div>
+  <div class="header-actions">
+    <button class="btn btn-ghost" onclick="clearAll()">Clear</button>
+    <button class="btn btn-primary" onclick="runCode()" id="runBtn">
+      <span class="run-icon"><img src="run.svg" alt="run/play"></span> Run
+      <span style="opacity:0.6;font-size:11px;margin-left:4px"><kbd class="kbd">Ctrl+↵</kbd></span>
+    </button>
+  </div>
+</header>
+
+<div class="main">
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Examples</div>
+      <button class="example-btn" onclick="loadExample('averaging')">Averaging Array</button>
+      <button class="example-btn" onclick="loadExample('dedup')">Dedup Collection</button>
+      <button class="example-btn" onclick="loadExample('factors')">Factors</button>
+      <button class="example-btn" onclick="loadExample('reversestack')">Reverse Stack</button>
+      <button class="example-btn" onclick="loadExample('fibonacci')">Fibonacci</button>
+      <button class="example-btn" onclick="loadExample('bubblesort')">Bubble Sort</button>
+      <button class="example-btn" onclick="loadExample('binary')">Binary Search</button>
+      <button class="example-btn" onclick="loadExample('queuedemo')">Queue Demo</button>
+    </div>
+    <div class="io-section">
+      <div class="sidebar-label" style="padding: 8px 14px 8px;">Input (stdin)</div>
+      <div class="input-block">
+        <textarea class="stdin-input" id="stdinInput" placeholder="Lines of input...&#10;(used by 'input' statements)"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDITOR -->
+  <div class="editor-panel">
+    <div class="editor-tabs">
+      <div class="tab active">main.pseudo</div>
+    </div>
+    <div class="editor-container">
+      <div class="line-numbers" id="lineNumbers"></div>
+      <textarea id="editor" spellcheck="false" autocorrect="off" autocapitalize="off"
+        placeholder="// Write IB pseudocode here...&#10;// Variables: ALL_CAPS&#10;// Keywords: lowercase"></textarea>
+    </div>
+  </div>
+
+  <!-- OUTPUT -->
+  <div class="output-panel">
+    <div class="panel-header">
+      <div class="panel-title">
+        <div class="status-dot" id="statusDot"></div>
+        Output
+      </div>
+      <button class="btn btn-ghost" style="padding:3px 8px;font-size:11px;" onclick="clearOutput()">✕</button>
+    </div>
+    <div class="output-content" id="outputContent">
+      <div class="empty-state">Press Run to execute your pseudocode</div>
+    </div>
+    <div class="vars-panel">
+      <div class="panel-header" style="padding:6px 14px;">
+        <div class="panel-title">Variables</div>
+      </div>
+      <div id="varsContent" style="padding:4px 0;">
+        <div class="empty-state" style="padding:8px 0;">No variables yet</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STDIN Modal -->
+<div class="stdin-overlay" id="stdinOverlay">
+  <div class="stdin-modal">
+    <h3>Input Required</h3>
+    <p id="stdinPromptText">Enter a value:</p>
+    <input type="text" class="stdin-field" id="stdinModalInput" placeholder="Type here and press Enter">
+    <div class="stdin-modal-footer">
+      <button class="btn btn-primary" onclick="submitStdin()">Submit</button>
+    </div>
+  </div>
+</div>
+
+<script src="interpreter.js" type="text/javascript"></script>
+</body>
+</html>
