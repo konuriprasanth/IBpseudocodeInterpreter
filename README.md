@@ -9,4 +9,8 @@ If only I made this for my IA...
 
 This project is based on the **IB Pseudocode, algorithms, and guide** provided by the **International Baccalaureate Organization (IBO)**. Full credit goes to them for the official specification.
 
+**Tip:**  
+In IB pseudocode, the "not equal to" operator for strings (and other comparisons) is `≠`.  
+You can copy-paste it here: `≠`
+
 If you encounter any issues, feel free to [open an issue](#), your feedback helps improve it!
