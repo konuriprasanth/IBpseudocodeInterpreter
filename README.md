@@ -11,6 +11,6 @@ This project is based on the **IB Pseudocode, algorithms, and guide** provided b
 
 **Tip:**  
 In IB pseudocode, the "not equal to" operator for strings (and other comparisons) is `≠`.  
-You can copy-paste it here: `≠`
+You can copy-paste it from here: `≠`
 
 If you encounter any issues, feel free to [open an issue](#), your feedback helps improve it!
